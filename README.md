@@ -16,10 +16,6 @@ Copyright (C) 2017, Mohammed Ahsan Adidb Murad and Luigi Vanfretti
 
 ## Development and contribution
 
-The library is developed by:
-
-Mohammed Ahsan Adib Murad
-
-Luigi Vanfretti
+The library is developed by [Mohammed Ahsan Adib Murad](https://github.com/ahsanKTH) and [Luigi Vanfretti](https://github.com/lvanfretti).
 
 Contributions are welcome via pull requests.
