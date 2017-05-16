@@ -2,6 +2,8 @@
 
 This repository contains a Modelica VSC-HVDC Average Value Model Implementation. These Modelica-compliant models are briefly described in the following paper of the 12th International Modelica Conference:
 
+> Mohammed Ahsan Adib Murad and Luigi Vanfretti, "A Modelica VSC-HVDC Average Value Model Implementation and its Software-to-Software Validation using an EMT Power System Domain Specific Simulator," Proceedings of the 12th International Modelica Conference, May 15-17, 2017, Prague, Czech Republic. [http://dx.doi.org/10.3384/ecp17132241](https://modelica.org/events/modelica2017/proceedings/html/authors/author_286.html)
+
 
 ## License
 
@@ -12,7 +14,9 @@ Copyright (C) 2017, Mohammed Ahsan Adidb Murad and Luigi Vanfretti
 ## Development and contribution
 
 The library is developed by:
+
 Mohammed Ahsan Adib Murad
+
 Luigi Vanfretti
 
 Contributions are welcome via pull requests.
