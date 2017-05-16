@@ -4,6 +4,9 @@ This repository contains a Modelica VSC-HVDC Average Value Model Implementation.
 
 > Mohammed Ahsan Adib Murad and Luigi Vanfretti, "A Modelica VSC-HVDC Average Value Model Implementation and its Software-to-Software Validation using an EMT Power System Domain Specific Simulator," Proceedings of the 12th International Modelica Conference, May 15-17, 2017, Prague, Czech Republic. [http://dx.doi.org/10.3384/ecp17132241](https://modelica.org/events/modelica2017/proceedings/html/authors/author_286.html)
 
+Please see the full paper for the documentation of the model.
+
+The repository also contains the EMTP-RV simulation models to which the Modelica implementation was compared to.
 
 ## License
 
