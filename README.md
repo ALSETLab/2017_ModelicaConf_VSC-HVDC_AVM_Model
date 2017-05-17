@@ -8,14 +8,14 @@ Please see the full paper for the documentation of the model.
 
 The repository also contains the EMTP-RV simulation models to which the Modelica implementation was compared to.
 
-## License
-
-This Modelica package is free software and the use is completely at your own risk; it can be redistributed and/or modified under the terms of the GNU Public License version 3.
-
-Copyright (C) 2017, Mohammed Ahsan Adidb Murad and Luigi Vanfretti
-
 ## Development and contribution
 
 The library is developed by [Mohammed Ahsan Adib Murad](https://github.com/ahsanKTH) and [Luigi Vanfretti](https://github.com/lvanfretti).
 
 Contributions are welcome via pull requests.
+
+## License
+
+This Modelica package is free software and the use is completely at your own risk; it can be redistributed and/or modified under the terms of the GNU Public License version 3.
+
+Copyright (C) 2017, Mohammed Ahsan Adidb Murad and Luigi Vanfretti
