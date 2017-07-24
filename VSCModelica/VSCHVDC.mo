@@ -817,7 +817,7 @@ with a default phase shift determined by
         Modelica.Blocks.Interfaces.RealInput frequency annotation (Placement(transformation(extent={{-140,-102},{-100,-62}})));
         Modelica.Blocks.Interfaces.RealOutput average_output annotation (Placement(transformation(extent={{100,-10},{120,10}})));
         Modelica.Blocks.Nonlinear.Limiter limiter(uMax=1e6, uMin=1e-6) annotation (Placement(transformation(extent={{-82,68},{-62,88}})));
-        Modelica.Blocks.Nonlinear.VariableDelay variableDelay(delayMax=0.0233) annotation (Placement(transformation(extent={{-6,-24},{14,-4}})));
+        Modelica.Blocks.Nonlinear.VariableDelay variableDelay(delayMax=1e100)  annotation (Placement(transformation(extent={{-6,-24},{14,-4}})));
         Modelica.Blocks.Continuous.Integrator integrator1 annotation (Placement(transformation(extent={{-68,0},{-48,20}})));
         Modelica.Blocks.Nonlinear.FixedDelay fixedDelay(delayTime=timeStep) annotation (Placement(transformation(extent={{-12,34},{2,48}})));
         Modelica.Blocks.Math.Add add annotation (Placement(transformation(extent={{68,-36},{88,-16}})));
@@ -1302,7 +1302,7 @@ with a default phase shift determined by
       DQToABC dQToABC annotation (Placement(transformation(extent={{108,8},{132,28}})));
       Clark clark annotation (Placement(transformation(extent={{-126,2},{-106,22}})));
       dq_trnsfrmns.dq_transfo dq_transfo annotation (Placement(transformation(extent={{-94,-46},{-74,-26}})));
-      VSCHVDC.HVDC_Emtp.PLL.PLL_Full pLL_Full2_1(
+      VSCHVDC.HVDC_Emtp.PLL.PLL_Full2 pLL_Full2_1(
         Freq=Freq,
         time_step=time_step,
         init=initPLL,
@@ -1860,23 +1860,22 @@ with a default phase shift determined by
       Modelica.Electrical.Analog.Interfaces.NegativePin N annotation (Placement(transformation(extent={{114,-52},{134,-32}})));
       Modelica.Electrical.MultiPhase.Interfaces.PositivePlug P_Plug annotation (Placement(transformation(extent={{-164,-10},{-144,10}})));
     equation
-      connect(P_P.phi[1], pU_Calculation.V_abc_Y[1]) annotation (Line(points={{
-              -98.6667,27},{-50,27},{-50,-51.5333},{-38.4,-51.5333}},                                                                  color={0,0,127}));
+      connect(P_P.phi[1], pU_Calculation.V_abc_Y[1]) annotation (Line(points={{-98,27},
+              {-50,27},{-50,-51.5333},{-38.4,-51.5333}},                                                                               color={0,0,127}));
       connect(P_P.phi[2], pU_Calculation.V_abc_Y[2]);
       connect(P_P.phi[3], pU_Calculation.V_abc_Y[3]);
-      connect(C_P.i[1], pU_Calculation.I_abc_Y[1]) annotation (Line(points={{-118,
-              57.6667},{-110,57.6667},{-110,-56.3333},{-38.4,-56.3333}},                                                                     color={0,0,127}));
+      connect(C_P.i[1], pU_Calculation.I_abc_Y[1]) annotation (Line(points={{-118,57},
+              {-110,57},{-110,-56.3333},{-38.4,-56.3333}},                                                                                   color={0,0,127}));
       connect(C_P.i[2], pU_Calculation.I_abc_Y[2]);
       connect(C_P.i[3], pU_Calculation.I_abc_Y[3]);
 
-      connect(P_S.phi[1], pU_Calculation.V_abc_D[1]) annotation (Line(points={{
-              -40.6667,31},{-58,31},{-58,-62.5333},{-38.4,-62.5333}},                                                                  color={0,0,127}));
+      connect(P_S.phi[1], pU_Calculation.V_abc_D[1]) annotation (Line(points={{-40,31},
+              {-58,31},{-58,-62.5333},{-38.4,-62.5333}},                                                                               color={0,0,127}));
       connect(P_S.phi[2], pU_Calculation.V_abc_D[2]);
       connect(P_S.phi[3], pU_Calculation.V_abc_D[3]);
 
-      connect(C_S.i[1], pU_Calculation.I_abc_D[1]) annotation (Line(points={{-34,
-              57.6667},{-56,57.6667},{-56,48},{-72,48},{-72,-67.3333},{-38.4,
-              -67.3333}},                                                                                                    color={0,0,127}));
+      connect(C_S.i[1], pU_Calculation.I_abc_D[1]) annotation (Line(points={{-34,57},
+              {-56,57},{-56,48},{-72,48},{-72,-67.3333},{-38.4,-67.3333}},                                                   color={0,0,127}));
       connect(C_S.i[2], pU_Calculation.I_abc_D[2]);
       connect(C_S.i[3], pU_Calculation.I_abc_D[3]);
       connect(pU_Calculation.V_ab_Y[1], upperLevel.V_abc_Y[1]) annotation (Line(points={{-15,
@@ -2206,14 +2205,15 @@ and one complete VSC HVDC model with controls.
         Modelica.Blocks.Sources.Cosine cosine1(
           freqHz=50,
           amplitude=1,
-          phase=-2.0943951023932) annotation (Placement(transformation(extent={{-88,-24},{-68,-4}})));
+          phase=-2.0943951023932) annotation (Placement(transformation(extent={{-94,-24},
+                  {-74,-4}})));
         HVDC_Emtp.PLL.PLL_Full pLL_Full(Freq=50, time_step=0.00001) annotation (Placement(transformation(extent={{14,-8},
                   {38,12}})));
         Modelica.Blocks.Math.Add add(k2=+1) annotation (Placement(transformation(extent={{-46,32},{-26,52}})));
         Modelica.Blocks.Sources.Step step(startTime=0.4, height=1) annotation (Placement(transformation(extent={{-94,10},
                   {-74,30}})));
       equation
-        connect(cosine1.y, pLL_Full.vb) annotation (Line(points={{-67,-14},{-34,
+        connect(cosine1.y, pLL_Full.vb) annotation (Line(points={{-73,-14},{-34,
                 -14},{-34,2.6},{11.4,2.6}},                                                                  color={0,0,127}));
         connect(cosine.y, add.u1) annotation (Line(points={{-73.1,53},{-54,53},{
                 -54,48},{-48,48}},                                                                 color={0,0,127}));
@@ -2366,11 +2366,15 @@ and one complete VSC HVDC model with controls.
               origin={55,54})));
       equation
         connect(equivalent_Source.positivePlug, vSC_MMC_AVMP.P_Plug) annotation (Line(points={{-88.4,12},{-92,12},{-92,54},{-83.4,54}}, color={0,0,255}));
-        connect(resistor.n, vSC_MMC_AVMVDC.P) annotation (Line(points={{16,60},{43.6,60},{43.6,59.4}}, color={0,0,255}));
+        connect(resistor.n, vSC_MMC_AVMVDC.P) annotation (Line(points={{16,60},
+                {41.6,60},{41.6,59.4}},                                                                color={0,0,255}));
         connect(vSC_MMC_AVMP.P, resistor.p) annotation (Line(points={{-55.6,59.4},{-23.8,59.4},{-23.8,60},{-4,60}}, color={0,0,255}));
-        connect(vSC_MMC_AVMP.N, vSC_MMC_AVMVDC.N) annotation (Line(points={{-55.6,49.8},{-55.6,49.8},{43.6,49.8}},color={0,0,255}));
-        connect(groundT5.p, vSC_MMC_AVMVDC.N) annotation (Line(points={{-8,42},{-8,50},{-5.8,49.8},{43.6,49.8}}, color={0,0,255}));
-        connect(vSC_MMC_AVMVDC.P_Plug, equivalent_Source1.positivePlug) annotation (Line(points={{71.4,54},{92,54},{92,10},{80.4,10}}, color={0,0,255}));
+        connect(vSC_MMC_AVMP.N, vSC_MMC_AVMVDC.N) annotation (Line(points={{-55.6,
+                49.8},{-55.6,49.8},{41.6,49.8}},                                                                  color={0,0,255}));
+        connect(groundT5.p, vSC_MMC_AVMVDC.N) annotation (Line(points={{-8,42},
+                {-8,49.8},{-5.8,49.8},{41.6,49.8}},                                                              color={0,0,255}));
+        connect(vSC_MMC_AVMVDC.P_Plug, equivalent_Source1.positivePlug) annotation (Line(points={{69.4,54},
+                {92,54},{92,10},{80.4,10}},                                                                                            color={0,0,255}));
         connect(equivalent_Source.negativePlug, star1.plug_p) annotation (Line(points={{-67.4,12},{-46,12},{-46,0}}, color={0,0,255}));
         connect(equivalent_Source1.negativePlug, star1.plug_p) annotation (Line(points={{59.4,10},{32,10},{-46,10},{-46,0}}, color={0,0,255}));
         connect(groundT2.p, star1.pin_n) annotation (Line(points={{-44,-32},{-44,-32},{-44,-20},{-46,-20}}, color={0,0,255}));
@@ -2411,7 +2415,8 @@ and one complete VSC HVDC model with controls.
 
 
 
-  annotation (uses(Modelica(version="3.2.1"), iPSL(version="0.8.1")),
+  annotation (uses(                           iPSL(version="0.8.1"), Modelica(
+          version="3.2.2")),
       Documentation(info="<html>
 <table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"<tr>
 <td><p>Reference</p></td>
