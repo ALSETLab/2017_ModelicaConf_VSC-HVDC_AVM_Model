@@ -32,7 +32,7 @@ To run this model in OpenModelica, the following test was conducted:
 While this allows you to simulate the model, it does not imply that the results from the simulation will be correct.
 You will need to check carefuly the settings you are providing for simulation.
 
-Currently, we have not found a configuration that would give acceptable results as compared to Dymola or EMTP-RV, as it can be observed in the figure below.
+Currently, we have not found a configuration that would give acceptable results as compared to Dymola or EMTP-RV, as it can be observed in the figure below. To check your results, reference results from Dymola are provided under the `.\Example_Results\` directory. In the figure below, the red line corresponds to the references results, and the blue line corresponds to the simulation from OpenModelica.
 
 ![alt text](https://github.com/ALSETLab/2017_ModelicaConf_VSC-HVDC_AVM_Model/blob/master/Example_Results/openmodelica_v1p13p2_64bit.png)
 
