@@ -30,10 +30,11 @@ To run this model in OpenModelica, the following test was conducted:
 - Add the following flag to the `OMC Command Line Options`: `-d=newInst`
 
 While this allows you to simulate the model, it does not imply that the results from the simulation will be correct.
-You will need to check carefuly the settings you are providing for simulation, the compiler, etc.
+You will need to check carefuly the settings you are providing for simulation.
 
 Currently, we have not found a configuration that would give acceptable results as compared to Dymola or EMTP-RV, as it can be observed in the figure below.
-![alt text]()
+
+![alt text](https://github.com/ALSETLab/2017_ModelicaConf_VSC-HVDC_AVM_Model/blob/master/Example_Results/openmodelica_v1p13p2_64bit.png)
 
 
 ## Development and contribution
