@@ -12,7 +12,7 @@ The repository also contains the EMTP-RV simulation models to which the Modelica
 
 ## How to Simulate it?
 
-In your favorite Modelica tool, e.g. Open Modelica, follow the steps below:
+Using Dymola, follow the steps below:
 - File/Open `./VSCModelica/VSCHVDC.mo`
 - Under the main package `VSCHVDC`, two subpackages should appear: (1) `HVDC_Emtp` and (2) `Example`
 - Under the `Example` subpackage, go to the subpackage `VSC` and select the model `TwoNodePowerSystem`; the figure shown on top of this repository should be displayed.
@@ -21,6 +21,19 @@ In your favorite Modelica tool, e.g. Open Modelica, follow the steps below:
 ![alt text](https://github.com/ALSETLab/2017_ModelicaConf_VSC-HVDC_AVM_Model/blob/master/Example_Results/Dymola2018/VSC/TwoNodePowerSystem_currents.png)
 ![alt text](https://github.com/ALSETLab/2017_ModelicaConf_VSC-HVDC_AVM_Model/blob/master/Example_Results/Dymola2018/VSC/TwoNodePowerSystem_controls.png)
 - You can perform similar simulations of some of the components within the model using the other models under the `Examples` subpackage, or by making your own simulation model.
+
+
+## Running the models in OpenModelica
+To run this model in OpenModelica, the following test was conducted:
+- Download OpenModelica version 1.13.2 (64-bit).
+- Go to `Tools>Options>Simulation`
+- Add the following flag to the `OMC Command Line Options`: `-d=newInst`
+
+While this allows you to simulate the model, it does not imply that the results from the simulation will be correct.
+You will need to check carefuly the settings you are providing for simulation, the compiler, etc.
+
+Currently, we have not found a configuration that would give acceptable results as compared to Dymola or EMTP-RV, as it can be observed in the figure below.
+![alt text]()
 
 
 ## Development and contribution
